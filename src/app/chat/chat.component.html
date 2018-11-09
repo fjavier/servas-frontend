@@ -1,0 +1,39 @@
+<div class="container border px-0">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-oscuro">
+        <a href="#" class="navbar-brand">
+          <span *ngIf="usuarioActual != undefined">
+            {{usuarioActual.nombre}}
+          </span>
+
+        </a>
+      </nav>
+      <div class="chat-container">
+        <app-detalle-usuarios-conectados [tamanioVentana]="dimensionContenedorMensajes" *ngIf="usuarioActual.esAdministrador" ></app-detalle-usuarios-conectados>
+          <div class="border scroll-y" [ngStyle]="{'height':dimensionContenedorMensajes}" >
+            <div *ngFor="let mensaje of mensajes" class="card mx-2 my-1 px-0 py-0" style="width: 95%">
+                <div class="card-body px-2 py-2">
+                  <div class="my-1 card-title font-weight-bold text-success">
+                    {{mensaje.remitente}}
+                  </div>
+                  <div class="card-text">
+                    {{mensaje.mensaje}}
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="border px-2 py-2 bg-oscuro">
+            <div class="form-inline">
+              <div class="row" style="width: 100%">
+                <div class="col-10 col-sm-10 col-md-11">
+                    <textarea [(ngModel)]="mensaje.mensaje" placeholder="Escribir..." style="height: 35px; width: 100%; overflow-y: scroll; resize: none;" class="form-control"></textarea>
+                </div>
+                <div class="col-2 col-sm-2 col-md-1">
+                    <button (click)="enviarMensaje()" type="button" class="btn btn-outline-light">
+                        Enviar
+                    </button>
+                </div>
+              </div>
+            </div>
+      </div>
+</div>

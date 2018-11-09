@@ -1,0 +1,17 @@
+<div class="card  m-sm-2">
+  <div class="card-header bg-oscuro">
+    Ingreso al chat
+  </div>
+  <div class="card-body">
+    <div class="my-2">
+      <label for="identificacion">Identificación:</label>
+      <input id="identificacion" [(ngModel)]="cliente.identificacion" class="form-control" />
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" [(ngModel)]="cliente.nombre" ngModel="nombre" class="form-control" />
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <a href="#" class="btn btn-sm btn-outline-info mx-1">Soy miembro</a>
+    <a routerLink="/chat" (click)="doLogin()" class="btn btn-sm btn-success mx-1">Ingresar</a>
+  </div>
+</div>

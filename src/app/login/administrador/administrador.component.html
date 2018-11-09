@@ -1,0 +1,18 @@
+<div class="container">
+<div class="card  m-sm-2">
+  <div class="card-header bg-oscuro">
+    Bienvenido
+  </div>
+  <div class="card-body">
+    <div class="my-2">
+      <label for="usuario">Usuario:</label>
+      <input id="usuario" [(ngModel)]="administrador.username" class="form-control" />
+      <label for="password">Contraseña:</label>
+      <input type="password" [(ngModel)]="administrador.password" id="password" class="form-control" />
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <a routerLink="/chat" (click)="doLogin()"  class="btn btn-sm btn-success mx-1">Ingresar</a>
+  </div>
+</div>
+</div>
